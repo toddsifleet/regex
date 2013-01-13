@@ -5,8 +5,8 @@ A simple wrapper around python's [re module](http://docs.python.org/2/library/re
 
 Usage
 -------
-    from regex import RegEx
-    regex = RegEx('^(?P<this>this) .* (?P<test>test)$')
+    from regex import Tester
+    regex = Tester('^(?P<this>this) .* (?P<test>test)$')
 
     if regex('this is a test'):
         print "Passes as expected"

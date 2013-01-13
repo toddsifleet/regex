@@ -1,6 +1,7 @@
 import re
 
-class RegEx(object):
+
+class Tester(object):
     default = None
     regex = None
     results = None
