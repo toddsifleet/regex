@@ -40,7 +40,7 @@ class Tester(object):
 
 if __name__ == '__main__':
     #create an instance with a regex string
-    regex = RegEx('^(?P<this>this) .* (?P<test>test)$')
+    regex = Tester('^(?P<this>this) .* (?P<test>test)$')
 
     if regex('this is a test'):
         print "regex('this is a test'):\n\t Passes as expected"
@@ -51,7 +51,7 @@ if __name__ == '__main__':
         print "doesn't die, returns None (regex.does_not_exist):\n\t %s" % str(regex.does_not_exist)
 
     print "\nYou can even do it all in one go:"
-    print "RegEx('^(?P<this>this) .* (?P<test>test)$')('this is a test').this: \n\t%s" % RegEx('^(?P<this>this) .* (?P<test>test)$')('this is a test').this
+    print "RegEx('^(?P<this>this) .* (?P<test>test)$')('this is a test').this: \n\t%s" % Tester('^(?P<this>this) .* (?P<test>test)$')('this is a test').this
     print "regex('this is a test').this: \n\t%s" % regex('this is a test').this
 
     if not regex('this is test that will fail!'):
