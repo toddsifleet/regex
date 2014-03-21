@@ -1,6 +1,5 @@
 import re
 
-
 class Tester(object):
     default = None
     regex = None
@@ -38,22 +37,3 @@ class Tester(object):
     def __nonzero__(self):
         return self.results is not None
 
-if __name__ == '__main__':
-    #create an instance with a regex string
-    regex = Tester('^(?P<this>this) .* (?P<test>test)$')
-
-    if regex('this is a test'):
-        print "regex('this is a test'):\n\t Passes as expected"
-        print "Access like a dictionary (regex['test']): \n\t%s" % regex['test']                
-        print "Get more than one value (regex['test', 'this']): \n\t%s" % ', '.join(regex['test', 'this'])
-        print "Access as an attribute (regex.test): \n\t%s" % regex.test
-        print "Access as an index (regex[1]): \n\t%s" % regex[0]
-        print "doesn't die, returns None (regex.does_not_exist):\n\t %s" % str(regex.does_not_exist)
-
-    print "\nYou can even do it all in one go:"
-    print "RegEx('^(?P<this>this) .* (?P<test>test)$')('this is a test').this: \n\t%s" % Tester('^(?P<this>this) .* (?P<test>test)$')('this is a test').this
-    print "regex('this is a test').this: \n\t%s" % regex('this is a test').this
-
-    if not regex('this is test that will fail!'):
-        print "\nregex('this is test that will fail!'):\n\tFailed as expected"
-        print "Old results are cleared out (regex['test']): \n\t%s" % regex['test']
